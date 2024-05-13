@@ -1,0 +1,13 @@
+package packInterface;
+import packShape.*;
+
+class AbstractInterfaceTest {
+    public static void main(String[] args) {
+          Shape ob1 = new Rectangle(4.0, 6.5);
+          Shape ob2 = new Triangle(5.5, 7.0);
+          ob1.show();
+          ob2.show();
+          // ob2의 길이를 100으로 바꾼 후 
+          ob2.show( );
+     }
+}

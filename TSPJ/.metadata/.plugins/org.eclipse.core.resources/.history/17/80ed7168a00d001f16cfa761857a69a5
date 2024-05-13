@@ -1,0 +1,23 @@
+package packShape;
+
+public class Rectangle extends Shape {
+	
+	Rectangle(double length,double height){
+		name = "직사각형";
+		this.height = height;
+		this.length = length;
+		
+	}
+	String whoAmI() {
+		return name+"#"+length+"x"+height;
+	}
+	double areaCalc() {
+		return height*length;
+	}
+	public void show() {
+		System.out.println("==============");
+		System.out.println("#"+whatNO()+" "+whoAmI()+" 면적:"+areaCalc());
+	}
+
+	
+}

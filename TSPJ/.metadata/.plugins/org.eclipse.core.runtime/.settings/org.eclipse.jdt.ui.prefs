@@ -1,0 +1,10 @@
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.Iterator"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.CharSequence"><rhs name\="java.lang.String"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="java.lang.String"/></lhs><lhs name\="java.lang.constant.ConstantDesc"><rhs name\="java.lang.String"/></lhs><lhs name\="Phone"><rhs name\="Phone"/></lhs><lhs name\="GradeManager"><rhs name\="GradeManager"/></lhs><lhs name\="ArrObj"><rhs name\="ArrObj"/></lhs><lhs name\="packShape.Shape"><rhs name\="packShape.Shape"/><rhs name\="packShape.Circle"/><rhs name\="packShape.Square"/><rhs name\="packShape.Triangle"/></lhs><lhs name\="packShape.Square"><rhs name\="packShape.Square"/></lhs><lhs name\="packShape.Circle"><rhs name\="packShape.Circle"/></lhs><lhs name\="packInterface.InterShape"><rhs name\="packShape.Triangle"/></lhs><lhs name\="packShape.Rectangle"><rhs name\="packShape.Triangle"/></lhs><lhs name\="packShape.Triangle"><rhs name\="packShape.Triangle"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=23
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="java" deleted\="false" description\="Scanner(System.in);" enabled\="true" name\="sc">Scanner sc \= new Scanner(System.in);</template></templates>
+spelling_locale_initialized=true
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

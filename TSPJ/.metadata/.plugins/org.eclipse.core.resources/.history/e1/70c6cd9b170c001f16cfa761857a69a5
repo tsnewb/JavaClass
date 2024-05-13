@@ -1,0 +1,33 @@
+package packShape;
+
+class Circle extends Shape{
+	int radius;
+	Circle (int radius){
+		this.radius = radius;
+		this.name = "원";
+	}
+	double areaCalc() {
+		return radius*radius*Math.PI;
+	}
+	void show() {
+		super.show();
+		System.out.printf("면적=%.4f\n",areaCalc());
+		System.out.println("반지름="+radius);
+	}
+}
+class oval extends Circle{
+	int radiusLong;
+	oval(int radius, int radiuslong){
+		super(radius);
+		this.radiusLong = radiuslong;
+		this.name = "타원";
+	}
+	double areaCalc() {
+		return Math.PI*radius*radiusLong;
+	}
+	void show() {
+		super.show();
+		System.out.println("긴 반지름="+radiusLong);
+
+	}
+}
