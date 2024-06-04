@@ -12,3 +12,6 @@ public class Person {
 		return weight;
 	}
 }
+class nate{
+	int num =10;
+}

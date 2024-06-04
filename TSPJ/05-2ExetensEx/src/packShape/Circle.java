@@ -14,9 +14,6 @@ class Circle extends Shape{
 		System.out.printf("면적=%.4f\n",areaCalc());
 		System.out.println("반지름="+radius);
 	}
-	void defineCircle() {
-		System.out.println("반지름 "+radius+"의 원");
-	}
 }
 class Oval extends Circle{
 	int radiusLong;

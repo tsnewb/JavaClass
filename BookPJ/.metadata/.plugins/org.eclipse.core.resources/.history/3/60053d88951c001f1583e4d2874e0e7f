@@ -1,0 +1,28 @@
+package AAA;
+
+import java.util.Vector;
+
+class ObclassTest {
+
+	public static void main(String[] args) {
+		/*Object ob = new Object();
+		System.out.println("ob: "+ob);
+		System.out.println("ob.tostring: "+ob.toString());
+		System.out.println("hashcode: "+ob.hashCode());
+		System.out.println("getclass: "+ob.getClass());
+		System.out.println("Class.getname: "+ob.getClass().getName());
+		
+		Integer a = Integer.valueOf(10);
+		Integer b = Integer.valueOf(10);
+		if(a==b)
+		{
+			System.out.println("태수바보");
+		}*/
+		Vector<Integer> v = new Vector<Integer>();
+		v.add(6);
+		v.add(9);
+		//int n = v.get(0);
+		System.out.println(v.remove(3));
+	}
+
+}

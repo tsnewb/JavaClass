@@ -1,0 +1,163 @@
+package packMain;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
+
+import packScore.*;
+
+class ApplyMng {
+
+	HashMap<String, Score> apply;
+	static Scanner in = new Scanner(System.in);
+	// static >> 모든 appltmng 객체가 공유한다
+
+	ApplyMng() {
+		apply = new HashMap<String, Score>();
+	}
+
+	void menu() {
+		System.out.println("-------------");
+		System.out.println("1. 입력  2. 검색  3. 삭제  4. 출력");
+		System.out.println("5. 경력5년이상출력  6. 설정조회  7. 정렬(평균기준)  9. 종료");
+		System.out.print("선택 : ");
+	}
+//	int isThere(String x) {}
+//	int emptyIdx() {}
+	
+	String keyInNo() {
+		System.out.print("응시번호(일반N~,경력E~): ");
+		String x = in.nextLine().trim();
+		return x;
+	}
+	@Override
+	public String toString() {//오버라이딩한 메서드의 반환형 바꿀수 없나?
+		StringBuffer sb = new StringBuffer("==응시리스트==\n");
+		int i= 0;
+		for(Score x:apply.values()) {
+			sb.append(i+++"--"+x.toString()).append("\n");
+		}
+
+		sb.append("총원 : "+apply.size()+"명");
+		return sb.toString();
+	}
+	public String toString2() {
+		StringBuffer sb = new StringBuffer("==응시리스트==\n");
+		Set <String> ks = apply.keySet();
+		Iterator<String> it = ks.iterator();
+		int i =0;
+		while(it.hasNext()) {
+			sb.append(i+++"--"+apply.get(it.next()).toString()+"\n");
+		}
+		sb.append("총원 : "+apply.size()+"명");
+		return sb.toString();
+	}
+	void insertApply() {
+		String no = keyInNo();
+		Score ep; //if문 안에 선언하면 지역변수가 된다
+		if(no.charAt(0)=='N')
+			ep = new Score(no);
+		else if(no.charAt(0)=='E') {
+			System.out.print("경력기간(년):");
+			int year = in.nextInt();
+			in.nextLine();
+			ep = new ScoreExp(no, year);
+		}
+		else {
+			System.out.println("구분오류");
+			return;
+		}
+		System.out.print("점수를,(콤마)로 열거하시오.:");
+		String txt = in.nextLine();
+		if(ep.putScore(txt)) {
+			apply.put(no, ep);
+		}
+	}
+	void searchApply() {
+		String no = keyInNo();
+		if(!apply.containsKey(no)) {
+			System.out.println("해당번호없음");
+			return;
+		}
+		System.out.println(apply.get(no));
+	}
+	void deleteApply() {
+		String no = keyInNo();
+		if(!apply.containsKey(no)) {
+			System.out.println("해당번호없음");
+			return;
+		}
+//		System.out.print(apply.get(no));
+		System.out.println(apply.remove(no)+"---삭제 완료");
+	}
+	void show5ExpApply() {
+//		ApplyMng am = new ApplyMng();
+		int cnt = 0;
+		for(Score x:apply.values()) {
+			if(x instanceof ScoreExp) {
+				if (((ScoreExp)x).getCarrer()>4) {
+					System.out.println(cnt+"-- "+x);
+					cnt++;
+				}
+			}
+		}
+		System.out.println("총원: "+cnt+"명");
+	}
+	void showCntRate() {
+		//Score.many
+		//ScoreExp.many
+		//퍼블릭 스태틱 변수
+		System.out.println("======\n일반응시과목개수:"+Score.many+"\n경력응시과목개수:"+ScoreExp.many+"\n경력1년당가산율:"+ScoreExp.getAddRate());
+	}
+	
+	void mng() {
+		while (true) {
+		
+			menu();
+			int choice = in.nextInt();
+			in.nextLine();
+			if (choice == 9)
+				break;
+			switch (choice) {
+		        case 1 : insertApply( );    break;		   
+		        case 2 : searchApply( );    break;
+		        case 3 : deleteApply( );    break;
+		        case 4 : System.out.println(this);   break;  
+		        case 5 : show5ExpApply( );    break;  
+		        case 6 : showCntRate( );     break;
+		        case 7 : break;   //정렬은 다음에 하자  
+                case 9 : break; 
+			}
+		}
+	}
+//	Object k = new Object();c
+//	Integer i = new Integer(5);
+//	벡터의 remove는 int를 넣으면 idx로 찾아서 삭제
+//	객체를 넣으면 객체의 class에 맞게 equals매서드를 통해 일치하는 객체를 찾아서 삭제
+	
+
+	public static void main(String[] args) {
+		Score s0 = new Score("N001");
+		s0.putScore("5,6,8");
+		System.out.println(s0); // toString 호출된다
+		Score s1 = new ScoreExp("E123", 6);
+		s1.putScore("6,7");
+		System.out.println(s1);
+		Score s2 = new Score("N011");
+		s2.putScore("6,6,9");
+		Score s3 = new ScoreExp("E001", 2);
+		s3.putScore("5,  9"); //trim으로 공백제거한다
+		Score s4 = new ScoreExp("E107", 5);
+		s4.putScore("5,  7");
+
+		ApplyMng am = new ApplyMng();
+		am.apply.put(s0.getNo(), s0);
+		am.apply.put(s1.getNo(), s1);
+		am.apply.put(s2.getNo(), s2);
+		am.apply.put(s3.getNo(), s3);
+		am.apply.put(s4.getNo(), s4);
+		am.mng();
+	}
+
+}
