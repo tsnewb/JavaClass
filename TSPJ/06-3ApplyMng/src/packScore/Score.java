@@ -16,7 +16,7 @@ public class Score implements InterScore, Comparable<Score> {
 	@Override
 	public int compareTo(Score oth) {
 //		return double.compare
-		return (int)(this.getAvg()-oth.getAvg());
+		return (int)((this.getAvg()-oth.getAvg())*100);
 //		return this.No.compareTo(oth.No);
 	}
 	@Override

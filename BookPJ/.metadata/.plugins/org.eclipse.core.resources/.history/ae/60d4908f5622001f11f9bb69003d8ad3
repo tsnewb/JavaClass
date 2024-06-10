@@ -30,7 +30,6 @@ class ObclassTest {
 		
 		//int n = v.get(0);
 		System.out.println(v.remove(3));
-		System.out.println(Intarr);
 	}
 
 }

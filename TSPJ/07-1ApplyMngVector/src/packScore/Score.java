@@ -2,7 +2,7 @@ package packScore;
 
 import java.util.StringTokenizer;
 
-public class Score implements InterScore {
+public class Score implements InterScore, Comparable<Score> {
 	private String No; //응시번호
 	private int sc[];
 	public Score(String No){
@@ -48,5 +48,12 @@ public class Score implements InterScore {
 		}
 		sb.append(" 평균 = "+getAvg());
 		return sb.toString();
+	}
+	@Override
+	public int compareTo(Score o) {
+		Double avg1 = this.getAvg();
+		Double avg2 = o.getAvg();
+		return avg1.compareTo(avg2);
+//		return this.No.compareTo(o.No);
 	}
 }

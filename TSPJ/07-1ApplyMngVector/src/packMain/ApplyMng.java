@@ -1,6 +1,7 @@
 package packMain;
 
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -150,7 +151,7 @@ class ApplyMng {
 		        case 4 : System.out.println(this);   break;  
 		        case 5 : show5ExpApply( );    break;  
 		        case 6 : showCntRate( );     break;
-		        case 7 : break;   //정렬은 다음에 하자  
+		        case 7 : Collections.sort(apply, Comparator.reverseOrder());  
                 case 9 : break; 
 			}
 		}
@@ -182,6 +183,11 @@ class ApplyMng {
 		am.apply.add(s3);
 		am.apply.add(s4);
 		am.mng();
+		
+		Object[] ss = am.apply.toArray(); // 모든 컬렉션들을 배열로 바꿀 수 있다
+							// 대신 Objct 배열이다
+		String[] sss = am.apply.toArray(new String[0]);
+		
 		
 //		Iterator<Score> it = am.apply.iterator();
 //		while(it.hasNext()) {

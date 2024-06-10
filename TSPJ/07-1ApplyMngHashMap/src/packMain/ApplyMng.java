@@ -1,7 +1,11 @@
 package packMain;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.Vector;
@@ -168,6 +172,15 @@ class ApplyMng {
 		am.apply.put(s3.getNo(), s3);
 		am.apply.put(s4.getNo(), s4);
 		am.mng();
+		
+		Collection <Score> c = am.apply.values();
+		
+		Set <String> s = am.apply.keySet();
+		ArrayList<String> al = new ArrayList<String>(s);
+		// arraylist 의 생성자 2 종류 있다, (), (값)
+		
+		Set <Entry <String, Score>> se = am.apply.entrySet();
+		
 		
 //		Iterator<Score> it = am.apply.iterator();
 //		while(it.hasNext()) {
