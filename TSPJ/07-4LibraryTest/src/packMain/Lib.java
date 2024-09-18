@@ -48,6 +48,8 @@ class Lib {
 		userMap.put(u.getuID(), u);	
 		u = new User("강감찬");
 		userMap.put(u.getuID(), u);	
+		u = new User("이선수");
+		userMap.put(u.getuID(), u);	
 	}
 	
 	@Override
@@ -225,7 +227,7 @@ class Lib {
 			User u = iter.next();
 			if(u.getName().equals(name)) {
 				System.out.println(u);
-				return;
+//				return;
 			}
 		}
 		System.out.println("해당고객 없음");
